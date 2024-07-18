@@ -18,3 +18,4 @@ npm i react-responsive-carousel
 
 npm i redux react-redux
 npm i @reduxjs/toolkit
+npm i axios
