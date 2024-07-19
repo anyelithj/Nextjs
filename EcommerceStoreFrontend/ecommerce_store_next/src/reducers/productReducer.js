@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios"
 import { baseUrl } from "@/config";
 
+//buscamos el producto el cid es el id de categoria 
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async(cid="", { rejectWithValue}) => {
     try {
         const response = await axios.get(`${baseUrl}/products?cide=${cid}`)
