@@ -1,0 +1,40 @@
+{
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:tailwindcss/recommended",
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+
+  "rules": {
+    "import-helepers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          ["/^next/", "module"],
+          "/^@/styles/",
+          "/^@/components/",
+          "/^@/lib/",
+          ["parent", "sibling", "index"]
+        ]
+      }
+    ],
+    "no-console": "warn",
+    "tailwindcss/classnames-order": "off",
+    "react/react-in-jsx-scope": "off",
+    "prettier/prettier": "error"
+  },
+  "plugins": ["tailwindcss"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  }
+}

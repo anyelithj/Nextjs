@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-primary text-white;
+  }
+}
+@layer components {
+  .sidebarTitle {
+    @apply text-[18px] font-semibold;
+  }
+  .sidebarLink {
+    @apply ml-4 w-fit cursor-pointer text-textColor transition hover:text-white;
+  }
+
+  @media (forced-colors: active) {
+    body {
+      background-color: black;
+      color: white;
+    }
+  }
+
+  @media (forced-colors: active) {
+    body {
+      background-color: black !important;
+      color: white !important;
+    }
+
+    .button {
+      background-color: rgb(201, 201, 157) !important;
+      color: black !important;
+    }
+  }
+
+  .sidebarActive {
+    @apply text-white;
+  }
+  .moviesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .cardSkeleton {
+    background-image: linear-gradient(
+      90deg,
+      #090b0e 0px,
+      #3d3d3d 60px,
+      #090b0e 120px
+    );
+    animation: shine 0.7s linear infinite;
+  }
+
+  @keyframe shine {
+    0% {
+      background-position: 0px;
+    }
+    100% {
+      background-position: 220px;
+    }
+  }
+}
+
+.lds-ring,
+.lds-ring div {
+  box-sizing: border-box;
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid currentColor;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: currentColor transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 8px;
+  border: 2px solid #222;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #333;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #222;
+}

@@ -1,6 +1,16 @@
 import { LuMenu } from "react-icons/lu"
+import { useDispatch, useSelector } from "react-redux"
+import { StateProps } from "../../../type"
+import { signOut } from "next-auth/react";
+import { removeuser } from "@/store/nextSlice";
 
 const HeaderBottom = () => {
+    const {userInfo} = useSelector((state: StateProps) => state.next);
+    const dispatch = useDispatch();
+    const handleSignOut = () => {
+        signOut();
+        dispatch(removeuser());
+    }
     return <div className="w-full h-10 bg-amazon_light text-sm text-white px-4 flex
     items-center">
         <p className="flex items-center gap-1 h-8 px-2 border border-transparent
@@ -51,10 +61,10 @@ const HeaderBottom = () => {
         hover:border-white cursor-pointer duration-300">
             Amazon Pay
         </p>
-        {/* {userInfo && (<button onClick={handleSignOut} className="hidden md:inline-flex flex items-center gap-1 h-8 px-2 border border-transparent
+        {userInfo && (<button onClick={handleSignOut} className="hidden md:inline-flex flex items-center gap-1 h-8 px-2 border border-transparent
         hover:border-red-600 hover:text-red-500 text-amazon_yellow cursor-pointer duration-300">
             Sign Out
-        </button>)} */}
+        </button>)}
     </div>
 }
 
