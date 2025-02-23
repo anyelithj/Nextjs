@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
-    <div className={cn("text-red-900", "uppercase")}>
+    <div className={cn("container","border", "border-red-500","text-red-900", "uppercase")}>
       <Button variant="destructive" size="sm" >Happy new year</Button>
     </div>
     //  <div className="text-red-900 uppercase">
