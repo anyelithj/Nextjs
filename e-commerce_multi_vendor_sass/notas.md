@@ -25,3 +25,11 @@ Ok to proceed? (y) y
 npx shadcn@latest add button
 How would you like to proceed? » Use --force 
 
+[coolors](https://coolors.co/)
+Tailwind CSS Color Generator 
+https://uicolors.app/create 51min
+clerk
+https://clerk.com/
+npm install @clerk/nextjs
+worldvectorlogo
+https://worldvectorlogo.com/es
